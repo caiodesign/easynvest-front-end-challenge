@@ -1,6 +1,10 @@
+import FormEventListeners from './form/listeners';
 import '../scss/app.scss';
 
-/* Your JS Code goes here */
+function init () {
+  const formEventHandler = new FormEventListeners();
 
-/* Demo JS */
-import './demo.js';
+  formEventHandler.onSubmit();
+}
+
+init();
