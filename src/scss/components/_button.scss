@@ -1,0 +1,47 @@
+button, .button {
+  outline: none;
+  width: 100%;
+  background-color: $green;
+  border-radius: 5rem;
+  border: none;
+  padding: 1.6rem;
+  font-size: $fs-large;
+  color: $white;
+  transition: $transition-default;
+
+  &:hover {
+    opacity: $hover-opacity;
+    cursor: pointer;
+  }
+
+  &.disabled {
+    background-color: $white-input;
+    color: $gray;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.action-button {
+  background: transparent;
+  border: none;
+  transition: $transition-default;
+  color: $dev-black;
+  outline: none;
+
+  &:hover{
+    cursor: pointer;
+
+    &.delete{
+      color: #c43330;
+      font-size: $fs-large;
+    }
+
+    &.edit{
+      color: #eea73f;
+      font-size: $fs-large;
+    }
+  }
+}

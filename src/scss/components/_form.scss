@@ -1,0 +1,59 @@
+form {
+  div, .row {
+    position: relative;
+  }
+
+  .row{
+    margin-bottom: 4rem;
+  }
+
+  input{
+    width: 100%;
+    height: 3.5rem;
+    font-size: $fs-default;
+    border: none;
+    border-bottom: 1px solid $default;
+    background-color: transparent;
+
+    &.error{
+      border-color: $red;
+    }
+
+    & + label{
+      position:absolute;
+      top: 1rem;
+      left: 0.3rem;
+      font-size: $fs-default;
+      color: $default;
+      transition: $transition-default;
+    }
+
+    &:focus,
+    &.has-value
+    {
+      outline: none;
+      border-width: 1px;
+      border-color: $dev-black;
+      transition: $transition-default;
+      &.error{
+        border-color: $red;
+      }
+    }
+
+    &:focus + label,
+    &.has-value + label
+    {
+      top: -1.5rem;
+      color: $dev-black;
+      font-size: $fs-small;
+    }
+    &.has-value:not(:focus) + label{
+      color:$dev-black;
+    }
+
+  }
+
+  .error-message{
+    color: $red;
+  }
+}

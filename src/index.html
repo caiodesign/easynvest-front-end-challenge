@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cadastrar</title>
+    <meta name="description" content="Simple form">
+    <meta name="keywords" content="form, boilerplate">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Caio Oliveira">
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <form>
+          <div class="row">
+            <input type="text" required name="name" id="name" class="material-input" tabindex="0"/>
+            <label for="name">Nome completo (sem abreviações)</label>
+            <span class="error-message" id="name-error"></span>
+        </div>
+        <div class="row">
+            <input type="email" required name="email" id="email" class="material-input" tabindex="1"/>
+            <label for="email">Email</label>
+            <span class="error-message" id="email-error"></span>
+        </div>
+        <div class="row">
+            <input type="text" required name="cpf" maxlength="14" id="cpf" class="material-input" tabindex="2"/>
+            <label for="cpf">CPF</label>
+            <span class="error-message" id="cpf-error"></span>
+        </div>
+        <div class="row">
+            <input type="tel" required name="phone" maxlength="15" id="phone" class="material-input"  tabindex="3"/>
+            <label for="phone">Telefone</label>
+            <span class="error-message" id="phone-error"></span>
+        </div>
+        <div>
+          <button type="submit" id="submit" tabindex="4">Cadastrar</button>
+          <div class="loader" id="loader"></div>
+        </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
