@@ -20,11 +20,13 @@
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
     "import/no-unresolved": 0,
-    "import/extensions": 0
+    "import/extensions": 0,
+    "class-methods-use-this": 0
   },
   "globals": {
     "browser": false,
     "window": true,
     "document": true
-  }
+  },
+  "parser": "@babel/eslint-parser"
 }

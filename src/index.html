@@ -11,32 +11,34 @@
   <body>
     <main>
       <section class="container">
-        <form>
+        <form id="register">
           <div class="row">
-            <input type="text" required name="name" id="name" class="material-input" tabindex="0"/>
+            <input type="text" required name="name" id="name"/>
             <label for="name">Nome completo (sem abreviações)</label>
             <span class="error-message" id="name-error"></span>
         </div>
         <div class="row">
-            <input type="email" required name="email" id="email" class="material-input" tabindex="1"/>
+            <input type="email" required name="email" id="email"/>
             <label for="email">Email</label>
             <span class="error-message" id="email-error"></span>
         </div>
         <div class="row">
-            <input type="text" required name="cpf" maxlength="14" id="cpf" class="material-input" tabindex="2"/>
+            <input type="text" required name="cpf" maxlength="14" id="cpf"/>
             <label for="cpf">CPF</label>
             <span class="error-message" id="cpf-error"></span>
         </div>
         <div class="row">
-            <input type="tel" required name="phone" maxlength="15" id="phone" class="material-input"  tabindex="3"/>
+            <input type="tel" required name="phone" maxlength="15" id="phone" />
             <label for="phone">Telefone</label>
             <span class="error-message" id="phone-error"></span>
         </div>
         <div>
-          <button type="submit" id="submit" tabindex="4">Cadastrar</button>
+          <button type="submit" id="submit">Cadastrar</button>
           <div class="loader" id="loader"></div>
         </div>
         </form>
+
+        <div id="notify"></div>
       </section>
     </main>
   </body>

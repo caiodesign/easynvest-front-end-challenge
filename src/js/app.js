@@ -1,6 +1,11 @@
 import '../scss/app.scss';
+import { RegisterOnSubmitListener } from './listeners/implementations/RegisterOnSubmitListener';
+import { createUserController } from './useCases/CreateUser';
 
-/* Your JS Code goes here */
+function init () {
+  const registerOnSubmitListener = new RegisterOnSubmitListener(document.querySelector('#register'), createUserController);
 
-/* Demo JS */
-import './demo.js';
+  registerOnSubmitListener.init();
+}
+
+init();
