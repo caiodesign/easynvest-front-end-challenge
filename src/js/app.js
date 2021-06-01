@@ -1,10 +1,11 @@
-import FormEventListeners from './form/listeners';
 import '../scss/app.scss';
+import { RegisterOnSubmitListener } from './listeners/implementations/RegisterOnSubmitListener';
+import { createUserController } from './useCases/CreateUser';
 
 function init () {
-  const formEventHandler = new FormEventListeners();
+  const registerOnSubmitListener = new RegisterOnSubmitListener(document.querySelector('#register'), createUserController);
 
-  formEventHandler.onSubmit();
+  registerOnSubmitListener.init();
 }
 
 init();
