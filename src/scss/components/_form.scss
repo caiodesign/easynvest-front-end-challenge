@@ -15,10 +15,6 @@ form {
     border-bottom: 1px solid $default;
     background-color: transparent;
 
-    &.error{
-      border-color: $red;
-    }
-
     & + label{
       position:absolute;
       top: 1rem;
@@ -53,7 +49,18 @@ form {
 
   }
 
-  .error-message{
+  .error-message {
+    display: none;
     color: $red;
+  }
+
+  .error{
+    .error-message {
+      display: block;
+    }
+
+    input {
+      border-color: $red;
+    }
   }
 }

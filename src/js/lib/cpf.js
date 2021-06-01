@@ -1,4 +1,4 @@
-export default function isValidCPF(data) {
+export default function isCPF(data) {
   if (typeof data !== 'string') return false;
 
   const cpf = data.replace(/[\s.-]*/igm, '');

@@ -1,4 +1,4 @@
-import NotifyUserService from '../NotifyUserService';
+import { NotifyUserService } from '../NotifyUserService';
 
 export class FormNotifyService extends NotifyUserService {
   constructor() {
@@ -8,13 +8,13 @@ export class FormNotifyService extends NotifyUserService {
 
   notify ({ success, error }) {
     if (success) {
-      this.notifyElement.innerHTML = 'success :)';
+      this.notifyElement.innerHTML = 'Usuario cadastrado com sucesso!  :)';
 
       return;
     }
 
     if (error) {
-      this.notifyElement.innerHTML = 'error :(';
+      this.notifyElement.innerHTML = 'Ocorreu algum problema... Verifique se o e-mail já não está sendo utilizado.';
     }
   }
 
