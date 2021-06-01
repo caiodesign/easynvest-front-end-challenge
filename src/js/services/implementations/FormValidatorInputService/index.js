@@ -1,5 +1,5 @@
-import { ValidatorInputService } from '../ValidatorInputService';
-import isCPF from '../../lib/cpf';
+import { ValidatorInputService } from '../../ValidatorInputService';
+import isCPF from '../../../lib/cpf';
 
 export class FormValidatorInputService extends ValidatorInputService {
   validateName(value) {
