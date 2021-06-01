@@ -2,7 +2,6 @@ import FormValidate from '../validators/form';
 
 class FormController {
   constructor() {
-    this.inputValidator = new FormValidate();
     this.errors = [];
   }
 
@@ -14,8 +13,9 @@ class FormController {
     if (!input) return;
 
     const errorElement = document.querySelector(`#${input.name}-error`);
+    const validator = new FormValidate();
 
-    if (this.inputValidator.validate(input.name, input.value)) {
+    if (validator.validate(input.name, input.value)) {
       input.classList.remove('error');
       this.errors = this.errors.filter((error) => error !== input.name);
       errorElement.innerText = '';
@@ -33,6 +33,18 @@ class FormController {
     this.validateField({ input: input.email, errorMessage: 'E-mail inválido' });
     this.validateField({ input: input.cpf, errorMessage: 'CPF inválido' });
     this.validateField({ input: input.phone, errorMessage: 'Telefone inválido' });
+  }
+
+  sendSuccessFeedback() {
+    if (this.hasInputErrors) return;
+
+    document.querySelector('#success');
+  }
+
+  register(input) {
+    this.validateInputValues(input);
+    this.sendSuccessFeedback();
+    }
   }
 }
 
