@@ -25,7 +25,7 @@ form {
     }
 
     &:focus,
-    &.has-value
+    &:valid
     {
       outline: none;
       border-width: 1px;
@@ -37,13 +37,13 @@ form {
     }
 
     &:focus + label,
-    &.has-value + label
+    &:valid + label
     {
       top: -1.5rem;
       color: $dev-black;
       font-size: $fs-small;
     }
-    &.has-value:not(:focus) + label{
+    &:valid:not(:focus) + label{
       color:$dev-black;
     }
 
