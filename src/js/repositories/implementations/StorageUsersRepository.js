@@ -45,7 +45,7 @@ export class StorageUsersRepository extends UsersRepository {
 
       if (log) {
         console.log(`Usuário ${name} com email: ${email}, cpf: ${cpf}, telefone: ${phone} registrado!`);
-        console.log(`Total de ${this.users.length} registros.`);
+        console.log(`Total de ${users.length} registros.`);
       }
 
       this.setItem(users);
