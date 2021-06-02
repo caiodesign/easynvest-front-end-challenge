@@ -6,7 +6,7 @@ const UserTemplateComponent = ({
   <td tabindex="2">${email}</td>
   <td tabindex="3">${cpf}</td>
   <td tabindex="4">${phone}</td>
-  <td class="icon-remove"><img data-id="${email}" tabindex="5" src="images/content/remove.svg"  alt="imagem da letra X de cor branca com fundo vermelho. clique para deletar o usuário."/></td>
+  <td class="icon-remove">${' '}<img data-id="${email}" tabindex="5" src="images/content/remove.svg"  alt="imagem da letra X de cor branca com fundo vermelho. clique para deletar o usuário."/></td>
 </tr>
 `;
 

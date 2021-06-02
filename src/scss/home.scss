@@ -1,27 +1,7 @@
-/* Core variables */
-@import 'base/vars';
-
-/* CSS Reset */
-@import 'base/reset';
-
-/* CSS print */
-@import 'base/print';
-
-/* Fonts */
-@import 'base/fonts';
-
-/* Mixins, helpers and functions */
-@import 'base/mixins';
-
-/* Globals */
-@import 'base/globals';
-
-/* Vendor */
+@import 'global';
 
 /* Components */
-@import 'components/button';
 @import 'components/form';
-@import 'components/container';
 @import 'components/notify';
 @import 'components/loader';
 

@@ -1,0 +1,27 @@
+/* Core variables */
+@import 'base/vars';
+
+/* CSS Reset */
+@import 'base/reset';
+
+/* CSS print */
+@import 'base/print';
+
+/* Fonts */
+@import 'base/fonts';
+
+/* Mixins, helpers and functions */
+@import 'base/mixins';
+
+/* Custom */
+
+html {
+  font-size: 62.5%;
+  font-family: $font-family;
+}
+
+/* Global Components */
+@import 'components/button';
+@import 'components/container';
+@import 'components/loader';
+@import 'components/navbar'

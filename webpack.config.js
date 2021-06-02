@@ -31,6 +31,7 @@ const htmlPluginEntries = templateFiles.map((template) => {
 
 module.exports = {
   entry: {
+    index: path.resolve(environment.paths.source, 'js', 'pages', 'index.js'),
     register: path.resolve(environment.paths.source, 'js', 'pages', 'register.js'),
     list: path.resolve(environment.paths.source, 'js', 'pages', 'list.js'),
   },

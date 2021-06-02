@@ -28,6 +28,7 @@
     }
 
     td {
+      min-width: 16rem;
       padding: 2rem;
       border-bottom: 1px solid rgba($dev-black, 0.1);
     }
@@ -40,6 +41,8 @@
   }
 
   .icon-remove {
+    min-width: 5.8rem;
+    min-height: 6.3rem;
     width: 5.8rem;
     user-select: none;
 
