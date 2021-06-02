@@ -1,4 +1,4 @@
-import { Listener } from '../Listener';
+import { Listener } from '../../Listener';
 
 export class RegisterOnSubmitListener extends Listener {
   formatData(input) {
@@ -11,7 +11,7 @@ export class RegisterOnSubmitListener extends Listener {
   }
 
   init() {
-    this.element.addEventListener('submit', (event) => {
+    document.querySelector(this.element).addEventListener('submit', (event) => {
       event.preventDefault();
 
       this.controller.handle(this.formatData(event));

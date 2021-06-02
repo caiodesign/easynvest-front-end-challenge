@@ -6,10 +6,6 @@ export class Listener {
     this.controller = Controller;
   }
 
-  formatData (input) {
-    return null;
-  }
-
   init() {
     return null;
   }

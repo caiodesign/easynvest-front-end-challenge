@@ -1,10 +1,7 @@
-import { Listener } from '../Listener';
-
-export class RegisterOnChangeListener extends Listener {
+export class RegisterOnChangeListener {
   constructor(phone, cpf) {
-    super();
-    this.phone = phone;
-    this.cpf = cpf;
+    this.phone = document.querySelector(phone);
+    this.cpf = document.querySelector(cpf);
   }
 
   maskPhone () {

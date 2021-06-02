@@ -8,6 +8,14 @@ export class UsersRepository {
     return null;
   }
 
+  deleteByEmail(email) {
+    return null;
+  }
+
+  saveByList(users) {
+    return null;
+  }
+
   save(user) {
     return null;
   }

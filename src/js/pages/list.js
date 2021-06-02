@@ -1,15 +1,10 @@
 import '../../scss/list.scss';
+import { listUsersController } from '../useCases/ListUsers';
+import { getUsersController } from '../useCases/GetUsers/index';
 
-import { RegisterOnSubmitListener } from '../listeners/implementations/RegisterOnSubmitListener';
-import { createUserController } from '../useCases/CreateUser';
-import { RegisterOnChangeListener } from '../listeners/implementations/RegisterOnChangeListener';
-
-function init () {
-  const registerOnSubmitListener = new RegisterOnSubmitListener(document.querySelector('#register'), createUserController);
-  const registerOnChangeListener = new RegisterOnChangeListener(document.querySelector('#phone'), document.querySelector('#cpf'));
-
-  registerOnSubmitListener.init();
-  registerOnChangeListener.init();
+async function init () {
+  await getUsersController.handle();
+  listUsersController.handle();
 }
 
 init();

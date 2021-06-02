@@ -1,32 +1,54 @@
+/* eslint-disable array-callback-return */
 import { UsersRepository } from '../UsersRepository';
 
 export class StorageUsersRepository extends UsersRepository {
   constructor() {
     super();
     this.storageKey = 'users';
-    this.users = JSON.parse(window.localStorage.getItem('users')) || [];
+    this.users = this.getAll();
   }
 
   getAll () {
-    return this.users;
+    const users = window.localStorage.getItem('users');
+
+    if (users) return JSON.parse(window.localStorage.getItem('users'));
+
+    return [];
+  }
+
+  setItem(item) {
+    window.localStorage.setItem(this.storageKey, JSON.stringify(item));
   }
 
   findByEmail(email) {
-    return this.users.find((user) => user.email === email);
+    return this.getAll().find((user) => user.email === email);
   }
 
-  save(user) {
+  saveByList(users = []) {
+    users.map((user) => {
+      if (!this.findByEmail(user.email)) this.save(user, false);
+    });
+  }
+
+  deleteByEmail(email) {
+    const users = this.getAll().filter((user) => email !== user.email);
+    this.setItem(users);
+  }
+
+  save(user, log = true) {
     const {
-      id, name, email, cpf, phone,
+      name, email, cpf, phone,
     } = user;
 
-    if (id && name && email && cpf && phone) {
+    if (name && email && cpf && phone) {
       this.users.push(user);
 
-      console.log(`Usuário ${name} com email: ${email}, cpf: ${cpf}, telefone: ${phone} registrado!`);
-      console.log(`Total de ${this.users.length} registros.`);
+      if (log) {
+        console.log(`Usuário ${name} com email: ${email}, cpf: ${cpf}, telefone: ${phone} registrado!`);
+        console.log(`Total de ${this.users.length} registros.`);
+      }
 
-      window.localStorage.setItem(this.storageKey, JSON.stringify(this.users));
+      this.setItem(this.users);
     }
   }
 }
