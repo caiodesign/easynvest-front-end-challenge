@@ -56,6 +56,6 @@ describe('StorageUsersRepository', () => {
     storageUsersRepository.saveByList(users);
     const usrs = storageUsersRepository.getAll();
 
-    expect(usrs).toHaveLength(3);
+    expect(usrs).toHaveLength(2);
   });
 });
