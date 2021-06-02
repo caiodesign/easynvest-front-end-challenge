@@ -41,14 +41,14 @@ export class StorageUsersRepository extends UsersRepository {
     } = user;
 
     if (name && email && cpf && phone) {
-      this.users.push(user);
+      const users = [...this.getAll(), user];
 
       if (log) {
         console.log(`Usuário ${name} com email: ${email}, cpf: ${cpf}, telefone: ${phone} registrado!`);
         console.log(`Total de ${this.users.length} registros.`);
       }
 
-      this.setItem(this.users);
+      this.setItem(users);
     }
   }
 }
