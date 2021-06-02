@@ -3,6 +3,8 @@
 ## Installing / Getting started
 Clone this project, and install all deps using
 
+* make sure to use *Node.js* `12` or `14` and above.
+
 ```shell
 npm install
 ```
@@ -10,7 +12,19 @@ or
 ```shell
 yarn
 ```
-A server will start on `8000` port. Use `http://localhost:8000` to view.
+
+
+After install all dependencies, you can run the project using
+
+```shell
+npm run dev
+```
+or
+```shell
+yarn dev
+```
+
+A server will start on `8000` port. Use `http://localhost:8000`.
 
 ## Tests
 
@@ -18,13 +32,13 @@ A server will start on `8000` port. Use `http://localhost:8000` to view.
 ```shell
 yarn test
 ```
-or 
+or
 ```shell
 npm run test
 ```
 
 ### end-to-end tests
-You also can run all e2e tests by using *easynvest-challenge-cypress-e2e* project. More info on https://github.com/caiodesign/easynvest-challenge-cypress-e2e
+You can also run all e2e tests by using *easynvest-challenge-cypress-e2e* project. More info on https://github.com/caiodesign/easynvest-challenge-cypress-e2e
 
 ## Developing
 
@@ -35,7 +49,7 @@ You also can run all e2e tests by using *easynvest-challenge-cypress-e2e* projec
 - jest
 
 ### Prerequisites
-Node.js 12 or 14 and above. 
+Node.js 12 or 14 and above.
 
 See `.nvmrc` file.
 
