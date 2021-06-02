@@ -16,17 +16,23 @@ const environment = require('./configuration/environment');
 const templateFiles = fs.readdirSync(environment.paths.source)
   .filter((file) => path.extname(file).toLowerCase() === '.html');
 
-const htmlPluginEntries = templateFiles.map((template) => new HTMLWebpackPlugin({
-  inject: true,
-  hash: false,
-  filename: template,
-  template: path.resolve(environment.paths.source, template),
-  favicon: path.resolve(environment.paths.source, 'images', 'favicon.ico'),
-}));
+const htmlPluginEntries = templateFiles.map((template) => {
+  const chunkName = template.split('.html')[0];
+
+  return new HTMLWebpackPlugin({
+    inject: true,
+    hash: false,
+    filename: template,
+    template: path.resolve(environment.paths.source, template),
+    favicon: path.resolve(environment.paths.source, 'images', 'favicon.ico'),
+    chunks: [chunkName],
+  });
+});
 
 module.exports = {
   entry: {
-    app: path.resolve(environment.paths.source, 'js', 'app.js'),
+    register: path.resolve(environment.paths.source, 'js', 'pages', 'register.js'),
+    list: path.resolve(environment.paths.source, 'js', 'pages', 'list.js'),
   },
   output: {
     filename: 'js/[name].js',
