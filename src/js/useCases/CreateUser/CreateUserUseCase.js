@@ -4,6 +4,7 @@ import { UsersRepository } from '../../repositories/UsersRepository';
 import { NotifyUserService } from '../../services/NotifyUserService';
 import { ValidatorInputService } from '../../services/ValidatorInputService';
 import { ErrorInputService } from '../../services/ErrorInputService';
+import { DataFormatter } from '../../services/DataFormatter';
 
 export class CreateUserUseCase {
   constructor(
@@ -11,11 +12,13 @@ export class CreateUserUseCase {
     notifyUserService = NotifyUserService,
     validatorService = ValidatorInputService,
     errorInputService = ErrorInputService,
+    dataFormatter = DataFormatter,
   ) {
     this.usersRepository = usersRepository;
     this.notifyUser = notifyUserService;
     this.validatorService = validatorService;
     this.errorInputService = errorInputService;
+    this.dataFormatter = dataFormatter;
   }
 
   execute (data = CreateUserRequestDTO) {
@@ -34,7 +37,7 @@ export class CreateUserUseCase {
       throw new Error('User already exists!');
     }
 
-    const user = new User(data);
+    const user = new User(this.dataFormatter.format(data));
 
     this.usersRepository.save(user);
     this.notifyUser.notify({ success: true });
