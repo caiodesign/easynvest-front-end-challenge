@@ -3,7 +3,7 @@ import isCPF from '../../lib/cpf';
 
 export class FormValidatorInputService extends ValidatorInputService {
   validateName(value) {
-    return value.length > 3;
+    return value.length >= 3;
   }
 
   validateEmail(value) {

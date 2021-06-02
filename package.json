@@ -7,7 +7,8 @@
     "production": "webpack --config configuration/webpack.prod.config.js --mode=production",
     "lint:sass": "sass-lint -v -q",
     "lint:js": "eslint --ext .js src/js/",
-    "stats": "webpack --config configuration/webpack.prod.config.js --mode=production --json > dist/stats.json && webpack-bundle-analyzer dist/stats.json"
+    "stats": "webpack --config configuration/webpack.prod.config.js --mode=production --json > dist/stats.json && webpack-bundle-analyzer dist/stats.json",
+    "test": "jest"
   },
   "author": "Caio Oliveira",
   "name": "easy-challenge-frontend",
@@ -23,6 +24,11 @@
     "@babel/eslint-parser": "^7.14.4",
     "@babel/plugin-transform-runtime": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
+    "@testing-library/dom": "^7.2.1",
+    "@testing-library/jest-dom": "^5.5.0",
+    "babel-jest": "^25.3.0",
+    "jest": "^25.3.0",
+    "jsdom": "^16.6.0",
     "add": "^2.0.6",
     "autoprefixer": "^10.2.5",
     "babel-loader": "^8.2.2",

@@ -1,4 +1,4 @@
-import { FormValidatorInputService } from '.';
+import { FormValidatorInputService } from './FormValidatorInputService';
 
 const user = {
   name: 'Caio Oliveira',
@@ -9,14 +9,16 @@ const user = {
 
 const formValidatorInputService = new FormValidatorInputService();
 
-describe('index.html', () => {
+describe('FormValidatorInputService', () => {
   it('should return TRUE when user name has 3 or more characters', () => {
     expect(formValidatorInputService.validateName(user.name)).toBeTruthy();
   });
 
   it('should return FALSE when user name does not have 3 or more characters', () => {
+    expect(formValidatorInputService.validateName('')).toBeFalsy();
     expect(formValidatorInputService.validateName('c')).toBeFalsy();
     expect(formValidatorInputService.validateName('ca')).toBeFalsy();
+
     expect(formValidatorInputService.validateName('cai')).toBeTruthy();
     expect(formValidatorInputService.validateName('caio')).toBeTruthy();
   });
